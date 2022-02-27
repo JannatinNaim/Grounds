@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.global_container {
+  padding-top: 8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact {
+  padding: 0 4rem;
+}
+.contact__name {
+  font-size: 2.5rem;
+  text-align: center;
+  font-family: sans-serif;
+  margin-bottom: 8rem;
+}
+.contact__content {
+  display: flex;
+  justify-content: space-between;
+}
+.contact__content__info {
+  width: 35%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  top: -4rem;
+  right: -4rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.contact__content__info__name {
+  font-size: 1.75rem;
+  font-weight: 500;
+  font-family: sans-serif;
+  margin-bottom: 1rem;
+}
+.contact__content__info__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact__content__info__links__item {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #202020;
+  font-family: sans-serif;
+}
+.contact__content__info__links__item__icon {
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+.contact__content__form {
+  width: 65%;
+  background: #202020;
+  padding: 0 8rem;
+  position: relative;
+}
+.contact__content__form__name {
+  color: white;
+  font-family: sans-serif;
+  margin: 2rem 0;
+  font-size: 1.75rem;
+}
+.contact__content__form__element * {
+  border: none;
+}
+.contact__content__form__element__name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+.contact__content__form__element__name__first_name {
+  display: inline-block;
+  width: 50%;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+.contact__content__form__element__name__last_name {
+  display: inline-block;
+  width: 50%;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+.contact__content__form__element__email {
+  width: 100%;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+.contact__content__form__element__message {
+  width: 100%;
+  resize: none;
+  height: 8rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: sans-serif;
+}
+.contact__content__form__element__submit {
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  width: 4rem;
+}
+
+.maps {
+  padding: 8rem 0;
+}
+.maps__map {
+  width: 100%;
+  height: 36rem;
+}
+
+/*# sourceMappingURL=base.css.map */
