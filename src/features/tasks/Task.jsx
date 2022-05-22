@@ -18,6 +18,8 @@ const Task = ({ task, setDisableListActions, hideListActions, setShowTaskCreateB
   const showAllActions = () => {
     setDisableListActions(false);
     setTaskEditMode(false);
+    setTaskCopyMode(false);
+    setTaskMoveMode(false);
     setShowTaskCreateButton(true);
     setShowTaskActions(false);
   };
@@ -26,9 +28,10 @@ const Task = ({ task, setDisableListActions, hideListActions, setShowTaskCreateB
     dispatch(updateTaskName(task.taskId, taskName));
     dispatch(updateTaskDescription(task.taskId, taskDescription));
 
-    dispatch(updateBoardUpdatedAt());
+    dispatch(updateBoardUpdatedAt(task.boardId));
 
     setTaskEditMode(false);
+    showAllActions()
   };
 
   const taskCopyHandler = (boardId, listId) => {
@@ -41,6 +44,7 @@ const Task = ({ task, setDisableListActions, hideListActions, setShowTaskCreateB
     dispatch(updateBoardUpdatedAt(boardId));
 
     setTaskCopyMode(false);
+    showAllActions();
   };
 
   const taskMoveHandler = (boardId, listId) => {
@@ -57,6 +61,7 @@ const Task = ({ task, setDisableListActions, hideListActions, setShowTaskCreateB
     dispatch(updateBoardUpdatedAt(task.boardId));
 
     setTaskMoveMode(false);
+    showAllActions();
   };
 
   return (
@@ -108,7 +113,7 @@ const Task = ({ task, setDisableListActions, hideListActions, setShowTaskCreateB
               itemType="Task"
               itemRelocateType="Copy"
               bufferMode={taskCopyMode}
-              setBufferMode={setTaskCopyMode}
+              setBufferMode={showAllActions}
               hasRelocateList={true}
               action={taskCopyHandler}
             />

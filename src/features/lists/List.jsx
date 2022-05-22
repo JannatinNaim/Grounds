@@ -52,12 +52,12 @@ const List = ({ list }) => {
   };
 
   const listCopyAction = (boardId) => {
-    const listId = Date.now();
+    const listId = Date.now() + "";
 
     dispatch(createList(listId, list.listName, list.listDescription, boardId));
     dispatch(addBoardList(boardId, listId));
     list.listTasks.forEach((taskId) => {
-      const _taskId = Date.now();
+      const _taskId = Date.now() + "";
       const task = tasks.find((task) => task.taskId === taskId);
 
       dispatch(createTask(_taskId, task.taskName, task.taskDescription, listId, boardId));

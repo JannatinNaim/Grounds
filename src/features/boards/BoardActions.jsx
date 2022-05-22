@@ -1,10 +1,14 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { deleteBoard } from "./boardsSlice";
+import { deleteList } from "../lists/listsSlice"
+import { deleteTask } from "../tasks/tasksSlice"
 
 const BoardActions = ({ board, setShowBoardActions, boardEditMode, setBoardEditMode }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const isDisabled = boardEditMode;
 
   const boardEditHandler = () => {
     setBoardEditMode(prev => !prev);
@@ -13,14 +17,18 @@ const BoardActions = ({ board, setShowBoardActions, boardEditMode, setBoardEditM
 
   const boardDeleteHandler = () => {
     navigate("/boards/", { replace: true });
+
     dispatch(deleteBoard(board.boardId));
+    board.boardLists.forEach(listId => dispatch(deleteList(listId)))
+    board.boardTasks.forEach(taskId => dispatch(deleteTask(taskId)))
+
     setShowBoardActions(false);
   };
 
   return (
     <div className="board-actions">
-      <button onClick={boardEditHandler} disabled={boardEditMode}>Edit</button>
-      <button onClick={boardDeleteHandler}>Delete</button>
+      <button onClick={boardEditHandler} disabled={isDisabled}>Edit</button>
+      <button onClick={boardDeleteHandler} disabled={isDisabled}>Delete</button>
     </div>
   );
 };

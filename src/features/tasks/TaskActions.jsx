@@ -18,7 +18,7 @@ const TaskActions = ({
   hideListActions,
 }) => {
   const dispatch = useDispatch();
-  const isDisabled = disableTaskInput || taskEditMode || taskMoveMode;
+  const isDisabled = disableTaskInput || taskEditMode || taskCopyMode ||  taskMoveMode;
 
   const taskEditHandler = () => {
     hideListActions();
@@ -30,10 +30,10 @@ const TaskActions = ({
 
   const taskCopyHandler = () => {
     hideListActions();
-    setDisableListActions(!taskEditMode);
+    setDisableListActions(!taskCopyMode);
     setDisableTaskInput();
     setTaskCopyMode((prev) => !prev);
-    setShowTaskActions(taskCopyMode);
+    setShowTaskActions(false);
   };
 
   const taskMoveHandler = () => {
