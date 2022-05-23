@@ -77,7 +77,7 @@ const Board = () => {
 
       <div className="board-page-actions">
         <button
-          className="board-list-add-button"
+          className="board-list-add-button btn btn-primary"
           onClick={() => setListAddMode((prev) => !prev)}
           disabled={listAddMode}
         >
@@ -93,7 +93,7 @@ const Board = () => {
           />
         )}
 
-        <button className="board-actions-button" onClick={() => setShowBoardActions((prev) => !prev)}>
+        <button className="board-actions-button btn btn-secondary btn-sm" onClick={() => setShowBoardActions((prev) => !prev)}>
           . . .
         </button>
       </div>

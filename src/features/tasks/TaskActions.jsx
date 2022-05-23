@@ -52,16 +52,16 @@ const TaskActions = ({
 
   return (
     <div className="task-actions">
-      <button onClick={taskEditHandler} disabled={isDisabled}>
+      <button className="btn btn-sm btn-outline-secondary" onClick={taskEditHandler} disabled={isDisabled}>
         Edit
       </button>
-      <button onClick={taskCopyHandler} disabled={isDisabled}>
+      <button className="btn btn-sm btn-outline-success" onClick={taskCopyHandler} disabled={isDisabled}>
         Copy
       </button>
-      <button onClick={taskMoveHandler} disabled={isDisabled}>
+      <button className="btn btn-sm btn-outline-warning" onClick={taskMoveHandler} disabled={isDisabled}>
         Move
       </button>
-      <button onClick={taskDeleteHandler} disabled={isDisabled}>
+      <button className="btn btn-sm btn-outline-danger" onClick={taskDeleteHandler} disabled={isDisabled}>
         Delete
       </button>
     </div>

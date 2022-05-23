@@ -27,8 +27,8 @@ const BoardActions = ({ board, setShowBoardActions, boardEditMode, setBoardEditM
 
   return (
     <div className="board-actions">
-      <button onClick={boardEditHandler} disabled={isDisabled}>Edit</button>
-      <button onClick={boardDeleteHandler} disabled={isDisabled}>Delete</button>
+      <button className="btn btn-sm btn-secondary" onClick={boardEditHandler} disabled={isDisabled}>Edit</button>
+      <button className="btn btn-sm btn-danger" onClick={boardDeleteHandler} disabled={isDisabled}>Delete</button>
     </div>
   );
 };

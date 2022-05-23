@@ -90,7 +90,7 @@ const Task = ({ task, setDisableListActions, hideListActions, setShowTaskCreateB
           />
         )}
 
-        <button className="task-actions-button" onClick={() => setShowTaskActions((prev) => !prev)}>
+        <button className="task-actions-button btn btn-sm btn-outline-secondary" onClick={() => setShowTaskActions((prev) => !prev)}>
           . . .
         </button>
       </div>

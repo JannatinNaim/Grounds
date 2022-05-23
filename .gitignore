@@ -3,6 +3,7 @@
 
 # Allowed Hidden Files
 !.gitignore
+!.babel.config.js
 
 # Dependencies
 node_modules/

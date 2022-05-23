@@ -26,6 +26,7 @@ const ItemRelocateForm = ({ itemType, itemRelocateType, action, bufferMode, setB
     <form className="item-relocate-form" onSubmit={(e) => itemRelocateFormSubmitHandler(e)}>
       <div className="item-relocate-form-inputs">
         <select
+          className="form-select"
           ref={itemBoardSelectInput}
           id="item-board-select"
           value={itemRelocateBoard}
@@ -41,7 +42,12 @@ const ItemRelocateForm = ({ itemType, itemRelocateType, action, bufferMode, setB
         </select>
 
         {hasRelocateList && (
-          <select id="item-list-select" value={itemRelocateList} onChange={(e) => setItemRelocateList(e.target.value)}>
+          <select
+            className="form-select"
+            id="item-list-select"
+            value={itemRelocateList}
+            onChange={(e) => setItemRelocateList(e.target.value)}
+          >
             <option value="none">Select List</option>
 
             {boards
@@ -61,11 +67,11 @@ const ItemRelocateForm = ({ itemType, itemRelocateType, action, bufferMode, setB
       </div>
 
       <div className="item-relocate-form-actions">
-        <button type="submit">
+        <button className="btn btn-success" type="submit">
           {itemRelocateType} {itemType}
         </button>
 
-        <button className="cancel-button" type="button" onClick={() => setBufferMode((prev) => !prev)}>
+        <button className="cancel-button btn btn-danger" type="button" onClick={() => setBufferMode((prev) => !prev)}>
           Cancel
         </button>
       </div>

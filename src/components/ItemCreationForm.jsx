@@ -41,10 +41,10 @@ const ItemCreationForm = ({ setBufferMode, action, itemType, initName = "", init
       </div>
 
       <div className="item-creation-form__actions">
-        <button type="submit" className="submit-button">
+        <button type="submit" className="submit-button btn btn-primary">
           {updateMode ? "Update" : "Add"} {itemType}
         </button>
-        <button type="button" className="cancel-button" onClick={() => setBufferMode(false)}>
+        <button type="button" className="cancel-button btn btn-danger" onClick={() => setBufferMode(false)}>
           Cancel
         </button>
       </div>

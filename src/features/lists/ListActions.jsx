@@ -58,16 +58,16 @@ const ListActions = ({
 
   return (
     <div className="list-actions">
-      <button onClick={listEditHandler} disabled={isDisabled}>
+      <button className="btn btn-sm btn-secondary" onClick={listEditHandler} disabled={isDisabled}>
         Edit
       </button>
-      <button onClick={listCopyHandler} disabled={isDisabled}>
+      <button className="btn btn-sm btn-success" onClick={listCopyHandler} disabled={isDisabled}>
         Copy
       </button>
-      <button onClick={listMoveHandler} disabled={isDisabled}>
+      <button className="btn btn-sm btn-warning" onClick={listMoveHandler} disabled={isDisabled}>
         Move
       </button>
-      <button onClick={listDeleteHandler} disabled={isDisabled}>
+      <button className="btn btn-sm btn-danger" onClick={listDeleteHandler} disabled={isDisabled}>
         Delete
       </button>
     </div>
