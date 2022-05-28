@@ -34,7 +34,10 @@ const boardsSlice = createSlice({
       },
 
       reducer(boards, action) {
-        return boards.filter((board) => board.boardId !== action.payload.boardId);
+        // return boards.filter((board) => board.boardId !== action.payload.boardId);
+
+        const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
+        boards.splice(boardIndex, 1);
       },
     },
 
@@ -75,8 +78,11 @@ const boardsSlice = createSlice({
       },
 
       reducer(boards, action) {
-        const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
-        boards[boardIndex].boardName = action.payload.boardName;
+        // const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
+        // boards[boardIndex].boardName = action.payload.boardName;
+
+        const board = boards.find((board) => board.boardId === action.payload.boardId);
+        board.boardName = action.payload.boardName;
       },
     },
 
@@ -91,8 +97,11 @@ const boardsSlice = createSlice({
       },
 
       reducer(boards, action) {
-        const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
-        boards[boardIndex].boardDescription = action.payload.boardDescription;
+        // const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
+        // boards[boardIndex].boardDescription = action.payload.boardDescription;
+
+        const board = boards.find((board) => board.boardId === action.payload.boardId);
+        board.boardDescription = action.payload.boardDescription;
       },
     },
 
@@ -107,8 +116,11 @@ const boardsSlice = createSlice({
       },
 
       reducer(boards, action) {
-        const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
-        boards[boardIndex].boardLists.push(action.payload.listId);
+        // const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
+        // boards[boardIndex].boardLists.push(action.payload.listId);
+
+        const board = boards.find((board) => board.boardId === action.payload.boardId);
+        board.boardLists.push(action.payload.listId);
       },
     },
 
@@ -123,10 +135,13 @@ const boardsSlice = createSlice({
       },
 
       reducer(boards, action) {
-        const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
-        boards[boardIndex].boardLists = boards[boardIndex].boardLists.filter(
-          (listId) => listId !== action.payload.listId
-        );
+        // const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
+        // boards[boardIndex].boardLists = boards[boardIndex].boardLists.filter(
+        //   (listId) => listId !== action.payload.listId
+        // );
+
+        const board = boards.find((board) => board.boardId === action.payload.boardId);
+        board.boardLists = board.boardLists.filter((listId) => listId !== action.payload.listId);
       },
     },
 
@@ -141,8 +156,11 @@ const boardsSlice = createSlice({
       },
 
       reducer(boards, action) {
-        const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
-        boards[boardIndex].boardTasks.push(action.payload.taskId);
+        // const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
+        // boards[boardIndex].boardTasks.push(action.payload.taskId);
+
+        const board = boards.find((board) => board.boardId === action.payload.boardId);
+        board.boardTasks.push(action.payload.taskId);
       },
     },
 
@@ -157,10 +175,13 @@ const boardsSlice = createSlice({
       },
 
       reducer(boards, action) {
-        const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
-        boards[boardIndex].boardTasks = boards[boardIndex].boardTasks.filter(
-          (taskId) => taskId !== action.payload.taskId
-        );
+        // const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
+        // boards[boardIndex].boardTasks = boards[boardIndex].boardTasks.filter(
+        //   (taskId) => taskId !== action.payload.taskId
+        // );
+
+        const board = boards.find((board) => board.boardId === action.payload.boardId);
+        board.boardTasks = board.boardTasks.filter((taskId) => taskId !== action.payload.taskId);
       },
     },
 
@@ -174,8 +195,11 @@ const boardsSlice = createSlice({
       },
 
       reducer(boards, action) {
-        const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
-        boards[boardIndex].updatedAt = new Date().toISOString();
+        // const boardIndex = boards.findIndex((board) => board.boardId === action.payload.boardId);
+        // boards[boardIndex].updatedAt = new Date().toISOString();
+
+        const board = boards.find((board) => board.boardId === action.payload.boardId);
+        board.updatedAt = new Date().toISOString();
       },
     },
   },

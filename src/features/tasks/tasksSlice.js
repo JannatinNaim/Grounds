@@ -34,7 +34,10 @@ const tasksSlice = createSlice({
       },
 
       reducer(tasks, action) {
-        tasks.filter((task) => task.taskId !== action.payload.taskId);
+        // tasks.filter((task) => task.taskId !== action.payload.taskId);
+
+        const taskIndex = tasks.findIndex((task) => task.taskId === action.payload.taskId);
+        tasks.splice(taskIndex, 1);
       },
     },
 
@@ -65,8 +68,11 @@ const tasksSlice = createSlice({
       },
 
       reducer(tasks, action) {
-        const taskIndex = tasks.findIndex((task) => task.taskId === action.payload.taskId);
-        tasks[taskIndex].taskName = action.payload.taskName;
+        // const taskIndex = tasks.findIndex((task) => task.taskId === action.payload.taskId);
+        // tasks[taskIndex].taskName = action.payload.taskName;
+
+        const task = tasks.find((task) => task.taskId === action.payload.taskId);
+        task.taskName = action.payload.taskName;
       },
     },
 
@@ -81,8 +87,11 @@ const tasksSlice = createSlice({
       },
 
       reducer(tasks, action) {
-        const taskIndex = tasks.findIndex((task) => task.taskId === action.payload.taskId);
-        tasks[taskIndex].taskDescription = action.payload.taskDescription;
+        // const taskIndex = tasks.findIndex((task) => task.taskId === action.payload.taskId);
+        // tasks[taskIndex].taskDescription = action.payload.taskDescription;
+
+        const task = tasks.find((task) => task.taskId === action.payload.taskId);
+        task.taskDescription = action.payload.taskDescription;
       },
     },
 
@@ -97,8 +106,11 @@ const tasksSlice = createSlice({
       },
 
       reducer(tasks, action) {
-        const taskIndex = tasks.findIndex((task) => task.taskId === action.payload.taskId);
-        tasks[taskIndex].listId = action.payload.listId;
+        // const taskIndex = tasks.findIndex((task) => task.taskId === action.payload.taskId);
+        // tasks[taskIndex].listId = action.payload.listId;
+
+        const task = tasks.find((task) => task.taskId === action.payload.taskId);
+        task.listId = action.payload.listId;
       },
     },
 
@@ -113,8 +125,11 @@ const tasksSlice = createSlice({
       },
 
       reducer(tasks, action) {
-        const taskIndex = tasks.findIndex((task) => task.taskId === action.payload.taskId);
-        tasks[taskIndex].boardId = action.payload.boardId;
+        // const taskIndex = tasks.findIndex((task) => task.taskId === action.payload.taskId);
+        // tasks[taskIndex].boardId = action.payload.boardId;
+
+        const task = tasks.find((task) => task.taskId === action.payload.taskId);
+        task.boardId = action.payload.boardId;
       },
     },
   },
