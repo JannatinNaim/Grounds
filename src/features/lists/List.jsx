@@ -121,7 +121,10 @@ const List = ({ list }) => {
           />
         )}
 
-        <button className="list-actions-button btn btn-sm btn-secondary" onClick={() => setShowListActions((prev) => !prev)}>
+        <button
+          className="list-actions-button btn btn-sm btn-secondary"
+          onClick={() => setShowListActions((prev) => !prev)}
+        >
           . . .
         </button>
       </div>
