@@ -31,7 +31,7 @@ const Task = ({ task, setDisableListActions, hideListActions, setShowTaskCreateB
     dispatch(updateBoardUpdatedAt(task.boardId));
 
     setTaskEditMode(false);
-    showAllActions()
+    showAllActions();
   };
 
   const taskCopyHandler = (boardId, listId) => {
@@ -90,7 +90,10 @@ const Task = ({ task, setDisableListActions, hideListActions, setShowTaskCreateB
           />
         )}
 
-        <button className="task-actions-button btn btn-sm btn-outline-secondary" onClick={() => setShowTaskActions((prev) => !prev)}>
+        <button
+          className="task-actions-button btn btn-sm btn-outline-secondary"
+          onClick={() => setShowTaskActions((prev) => !prev)}
+        >
           . . .
         </button>
       </div>

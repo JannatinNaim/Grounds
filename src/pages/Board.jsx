@@ -93,7 +93,10 @@ const Board = () => {
           />
         )}
 
-        <button className="board-actions-button btn btn-secondary btn-sm" onClick={() => setShowBoardActions((prev) => !prev)}>
+        <button
+          className="board-actions-button btn btn-secondary btn-sm"
+          onClick={() => setShowBoardActions((prev) => !prev)}
+        >
           . . .
         </button>
       </div>

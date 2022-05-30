@@ -21,6 +21,9 @@
       "react-app"
     ]
   },
+  "prettier": {
+    "printWidth": 120
+  },
   "devDependencies": {
     "eslint": "^8.15.0"
   },
