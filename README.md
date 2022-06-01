@@ -1,3 +1,1 @@
-# React App Base
-
-Base React application.
+# Sparring Ground
