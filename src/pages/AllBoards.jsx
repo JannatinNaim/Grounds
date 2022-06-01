@@ -1,9 +1,9 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { boardsSelector, createBoard } from "../features/boards/boardsSlice";
 import ItemCreationButton from "../components/ItemCreationButton";
 import BoardPreview from "../features/boards/BoardPreview";
-import { useState } from "react";
+import { boardsSelector, createBoard } from "../features/boards/boardsSlice";
 
 const AllBoards = () => {
   const dispatch = useDispatch();

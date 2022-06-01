@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import { deleteList } from "./listsSlice";
 import { removeBoardList, removeBoardTask, updateBoardUpdatedAt } from "../boards/boardsSlice";
+import { deleteList } from "./listsSlice";
 
 const ListActions = ({
   list,

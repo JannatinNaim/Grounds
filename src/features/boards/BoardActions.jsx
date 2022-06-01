@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { deleteBoard } from "./boardsSlice";
 import { deleteList } from "../lists/listsSlice";
 import { deleteTask } from "../tasks/tasksSlice";
+import { deleteBoard } from "./boardsSlice";
 
 const BoardActions = ({ board, setShowBoardActions, boardEditMode, setBoardEditMode }) => {
   const dispatch = useDispatch();

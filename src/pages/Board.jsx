@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import {
-  boardsSelector,
-  updateBoardUpdatedAt,
-  addBoardList,
-  updateBoardName,
-  updateBoardDescription,
-} from "../features/boards/boardsSlice";
-import { listsSelector, createList } from "../features/lists/listsSlice";
-import BoardActions from "../features/boards/BoardActions";
 import ItemCreationForm from "../components/ItemCreationForm";
+import BoardActions from "../features/boards/BoardActions";
+import {
+  addBoardList,
+  boardsSelector,
+  updateBoardDescription,
+  updateBoardName,
+  updateBoardUpdatedAt,
+} from "../features/boards/boardsSlice";
 import List from "../features/lists/List";
+import { createList, listsSelector } from "../features/lists/listsSlice";
 
 const Board = () => {
   const dispatch = useDispatch();

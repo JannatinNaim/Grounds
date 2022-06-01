@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import ListActions from "./ListActions";
+import { useDispatch, useSelector } from "react-redux";
 import ItemCreationButton from "../../components/ItemCreationButton";
 import ItemCreationForm from "../../components/ItemCreationForm";
 import ItemRelocateForm from "../../components/ItemRelocateForm";
-import Task from "../tasks/Task";
-import { addListTask, createList, updateListBoard, updateListDescription, updateListName } from "./listsSlice";
-import { useDispatch, useSelector } from "react-redux";
 import {
   addBoardList,
   addBoardTask,
@@ -13,7 +10,10 @@ import {
   removeBoardTask,
   updateBoardUpdatedAt,
 } from "../boards/boardsSlice";
+import Task from "../tasks/Task";
 import { createTask, tasksSelector } from "../tasks/tasksSlice";
+import ListActions from "./ListActions";
+import { addListTask, createList, updateListBoard, updateListDescription, updateListName } from "./listsSlice";
 
 const List = ({ list }) => {
   const dispatch = useDispatch();

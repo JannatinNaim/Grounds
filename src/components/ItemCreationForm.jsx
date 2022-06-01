@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ItemCreationForm = ({ setBufferMode, action, itemType, initName = "", initDescription = "", updateMode }) => {
   const [itemName, setItemName] = useState(initName);
@@ -33,7 +33,6 @@ const ItemCreationForm = ({ setBufferMode, action, itemType, initName = "", init
 
         <textarea
           className="item-description-input"
-          type="text"
           value={itemDescription}
           onChange={(e) => setItemDescription(e.target.value)}
           placeholder="Description"
