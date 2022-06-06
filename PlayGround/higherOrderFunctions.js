@@ -1,22 +1,27 @@
 const greaterThan = (n) => (m) => m > n;
-console.log(greaterThan(10)(100));
+const greaterThan100 = greaterThan(100);
+console.log(greaterThan100(1000));
 
-const noisy =
-  (func) =>
-  (...args) =>
-    func(args);
-console.log(noisy(greaterThan)(10)(100));
+const lessThan = (n) => (m) => m < n;
+const lessThan20 = lessThan(20);
+console.log(lessThan20(200));
 
-const unless = (test, then) => {
-  if (!test) then();
+const isEqualTo = (n) => (m) => m === n;
+const isEqualTo100 = isEqualTo(100);
+console.log(isEqualTo100(100));
+
+const handover = (func) => {
+  console.log("Function was handed over.");
+
+  return (...args) => {
+    console.log("Handed over function is being called.");
+    return func(...args);
+  };
 };
 
-const repeat = (n, action) => {
-  for (let i = 0; i < n; i++) action(i);
-};
+const handoverGreaterThan = handover(greaterThan);
+const handedOverGreaterThan10 = handoverGreaterThan(10);
+console.log(handedOverGreaterThan10(100));
 
-repeat(5, (n) => {
-  unless(n % 2 == 1, () => {
-    console.log(n, "is even");
-  });
-});
+const handedOverConsoleLog = handover(console.log);
+handedOverConsoleLog("monkey");
