@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import {useState} from "react";
+import {useDispatch} from "react-redux";
 import ItemCreationForm from "../../components/ItemCreationForm";
 import ItemRelocateForm from "../../components/ItemRelocateForm";
-import { addBoardTask, removeBoardTask, updateBoardUpdatedAt } from "../boards/boardsSlice";
-import { addListTask, removeListTask } from "../lists/listsSlice";
+import {addBoardTask, removeBoardTask, updateBoardUpdatedAt} from "../boards/boardsSlice";
+import {addListTask, removeListTask} from "../lists/listsSlice";
 import TaskActions from "./TaskActions";
-import { createTask, updateTaskBoard, updateTaskDescription, updateTaskList, updateTaskName } from "./tasksSlice";
+import {createTask, updateTaskBoard, updateTaskDescription, updateTaskList, updateTaskName} from "./tasksSlice";
 
-const Task = ({ task, setDisableListActions, hideListActions, setShowTaskCreateButton }) => {
+const Task = ({task, setDisableListActions, hideListActions, setShowTaskCreateButton}) => {
   const dispatch = useDispatch();
   const [showTaskActions, setShowTaskActions] = useState(false);
   const [disableTaskInput, setDisableTaskInput] = useState(false);
