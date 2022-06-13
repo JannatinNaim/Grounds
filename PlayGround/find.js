@@ -1,19 +1,12 @@
-function find(target) {
-  function recurseFind(current, history) {
-    if (current === target) return history;
-    if (current > target) return null;
-
-    return recurseFind(current * 3, `(${history}) * 3`) || recurseFind(current + 5, `(${history}) + 5`);
+function find(number, start) {
+  function finder(current, history) {
+    if (current === number) return history;
+    if (current > number) return null;
+    return finder(current + 5, `(${history} + 5)`) || finder(current * 3, `(${history} * 3)`);
   }
 
-  return recurseFind(1, "1");
+  return finder(start, start);
 }
 
-console.log(find(13));
-// 1 * 3 + 5 + 5 = 13
-
-console.log(find(27));
-// 1 * 3 * 3 * 3 = 27
-
-console.log(find(16));
-// 1 + 5 + 5 + 5 = 16
+console.log(find(13, 8));
+console.log(find(27, 3));
