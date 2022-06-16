@@ -1,37 +1,24 @@
-class User {
-  constructor(rank = -8, progress = 0) {
-    this.ranks = [-8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8];
-    this.rankIndex = this.ranks.indexOf(rank);
-    this.rank = this.ranks[this.rankIndex];
-    this.progress = progress;
-  }
+function add(a = "", b = "") {
+  let sum = "";
+  let largerIndex = a.length - b.length > 0 ? a.length : b.length;
 
-  incProgress(n) {
-    if (n < -8 || n === 0 || n > 8) throw new Error();
+  let carryDigit = 0;
+  for (let i = 0; i < largerIndex; i++) {
+    const aLastDigit = Number(a[a.length - 1 - i]) || 0;
+    const bLastDigit = Number(b[b.length - 1 - i]) || 0;
 
-    const rankDifference = this.ranks.indexOf(n) - this.rankIndex;
+    const singleDigitSum = String(aLastDigit + bLastDigit + carryDigit);
 
-    if (rankDifference <= -2) return;
-
-    let score = 0;
-    if (rankDifference === 0) score = 3;
-    else if (rankDifference === -1) score = 1;
-    else score = 10 * rankDifference ** 2;
-
-    this.progress += score;
-
-    let canRankUp = Math.floor(this.progress / 100) >= 1 && this.rank < 8;
-    while (canRankUp) {
-      this.rankIndex += 1;
-      this.rank = this.ranks[this.rankIndex];
-      this.progress -= 100;
-
-      canRankUp = Math.floor(this.progress / 100) >= 1 && this.rank < 8;
+    if (singleDigitSum.length > 1) {
+      sum = singleDigitSum[1] + sum;
+      carryDigit = Number(singleDigitSum[0]);
+    } else {
+      sum = singleDigitSum + sum;
+      carryDigit = 0;
     }
-
-    if (this.rank === 8) this.progress = 0;
   }
-}
 
-let user = new User();
-user.incProgress(8);
+  if (carryDigit) sum = carryDigit + sum;
+
+  return sum;
+}
