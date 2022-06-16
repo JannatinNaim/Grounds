@@ -1,24 +1,19 @@
-function add(a = "", b = "") {
-  let sum = "";
-  let largerIndex = a.length - b.length > 0 ? a.length : b.length;
+let array = [7, 2, 3, 0, 4, 6, 0, 0, 13, 0, 78, 0, 0, 19, 14];
 
-  let carryDigit = 0;
-  for (let i = 0; i < largerIndex; i++) {
-    const aLastDigit = Number(a[a.length - 1 - i]) || 0;
-    const bLastDigit = Number(b[b.length - 1 - i]) || 0;
+function removeZeros(array = []) {
+  let end = array.length;
+  for (let i = 0; i < end; i++) {
+    let current = array[i];
 
-    const singleDigitSum = String(aLastDigit + bLastDigit + carryDigit);
-
-    if (singleDigitSum.length > 1) {
-      sum = singleDigitSum[1] + sum;
-      carryDigit = Number(singleDigitSum[0]);
-    } else {
-      sum = singleDigitSum + sum;
-      carryDigit = 0;
+    if (current === 0 || current === "0" || !current) {
+      for (j = i; j < array.length; j++) array[j] = array[j + 1];
+      array[array.length - 1] = current;
+      i--;
+      end--;
     }
   }
 
-  if (carryDigit) sum = carryDigit + sum;
-
-  return sum;
+  return array;
 }
+
+console.log(removeZeros(array));
