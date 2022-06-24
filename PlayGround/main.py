@@ -1,14 +1,11 @@
-def bubbleSort(a):
-    for i in range(len(a)):
-        s = True
-        for j in range(len(a) - i - 1):
-            if a[j] > a[j + 1]:
-                a[j], a[j+1] = a[j+1], a[j]
-                s = True
-        if not s:
-            break
+dividend = 105
+divisor = 25
+remainder = dividend % divisor
+gcd = remainder
 
+while remainder:
+    divisor = remainder
+    gcd = remainder
+    remainder = dividend % divisor
 
-x = [2, 1, 3]
-bubbleSort(x)
-print(x)
+print(gcd)
