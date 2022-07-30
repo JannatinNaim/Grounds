@@ -1,14 +1,33 @@
-def sum_of_n_nums(start: int, n: int) -> int:
-    if n == start:
-        return start
-    return sum_of_n_nums(start, n - 1) + n
+from typing import List
 
 
-x = sum_of_n_nums(100, 101)
+class User:
+    def __init__(self, name: str):
+        self.name = name
+
+    def greet(self):
+        print(f"I'm {self.name}.")
 
 
-def string_to_int(num: int) -> str:
-    return str(num)
+class Users:
+    def __init__(self, names: List[str]):
+        self.users: List[User] = []
+
+        for name in names:
+            self.users.append(
+                User(name)
+            )
+
+    def list(self):
+        for user in self.users:
+            print(user.name)
 
 
-y = string_to_int(123)
+names = ["A", "B", "C"]
+users = Users(names)
+
+# for name in names:
+#     users.append(User(name))
+
+for user in users.users:
+    user.greet()
